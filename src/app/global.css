@@ -38,4 +38,11 @@
   .animate-spin-slow {
     animation: spin 6s linear infinite;
   }
+
+  .debug {
+    @apply border-1 border-white;
+    > * {
+      @apply border-1 border-red-500;
+    }
+  }
 }

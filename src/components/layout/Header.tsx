@@ -1,12 +1,12 @@
 import React from "react";
-import { Logo } from "../common/logo";
+import Logo from "../common/Logo";
 
 // type Props = {};
 
 function Header() {
   return (
-    <header className="flex justify-center">
-      <Logo className="z-10 h-20 cursor-pointer text-sky-800" />
+    <header className="relative z-10 -mb-28 flex justify-center py-4">
+      <Logo className="h-20 cursor-pointer text-sky-800" />
     </header>
   );
 }

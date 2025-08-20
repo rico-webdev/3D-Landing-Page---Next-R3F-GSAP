@@ -6,7 +6,7 @@ import clsx from "clsx";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-export function Logo(props: SVGProps<SVGSVGElement>) {
+function Logo(props: SVGProps<SVGSVGElement>) {
   const container = useRef<HTMLDivElement>(null);
 
   const { contextSafe } = useGSAP({ scope: container });
@@ -103,3 +103,5 @@ export function Logo(props: SVGProps<SVGSVGElement>) {
     </div>
   );
 }
+
+export default Logo;

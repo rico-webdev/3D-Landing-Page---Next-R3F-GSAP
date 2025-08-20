@@ -1,0 +1,101 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Green"
+						}
+					}
+				]
+			},
+			"subheading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Anim esse eiusmod consequat excepteur irure est anim tempor. Est cupidatat qui qui qui est eu dolor laborum. Magna ex cupidatat commodo esse cillum eiusmod Lorem adipisicing id mollit eu non commodo exercitation."
+						}
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Do cillum aliquip pariatur enim cupidatat aute ad est veniam ad. Nulla elit Lorem laboris."
+						}
+					}
+				]
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "log",
+				"type": "Text"
+			},
+			"button_link": {
+				"key": "8ea2d894-8fae-4de3-be5e-149f3c347420",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev",
+					"text": "ring"
+				}
+			},
+			"cans": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
+					"width": 4000,
+					"height": 4000
+				},
+				"url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
+				"width": 4000,
+				"height": 4000,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "fourth",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"second_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Planning"
+						}
+					}
+				]
+			},
+			"second_body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Commodo sunt ut nisi ut aliqua laboris dolore pariatur veniam in consequat adipisicing reprehenderit magna laboris. Commodo id ex laborum nulla tempor do duis labore duis elit proident aliqua aute quis. Laborum est ut nisi mollit officia laborum ullamco ea irure ut ex eiusmod proident."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
