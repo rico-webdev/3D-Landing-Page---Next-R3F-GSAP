@@ -8,6 +8,19 @@
   --color-crayola: #2176ff;
   --color-sunset: #fbcf9d;
   --color-chestnut: #a44a3f;
+
+  --color-btn: #d5573b;
+  --color-btn-hover: #b94227;
+
+  --text-base: 16px;
+  --text-lg: calc(var(--text-base) * 1.618);
+  --text-xl: calc(var(--text-lg) * 1.618);
+  --text-2xl: calc(var(--text-xl) * 1.618);
+  --text-3xl: calc(var(--text-2xl) * 1.618);
+  --text-4xl: calc(var(--text-3xl) * 1.618);
+  --text-5xl: calc(var(--text-4xl) * 1.618);
+  --text-6xl: calc(var(--text-5xl) * 1.618);
+  --text-7xl: calc(var(--text-6xl) * 1.618);
 }
 
 @layer base {
