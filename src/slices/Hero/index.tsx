@@ -1,4 +1,6 @@
-import { FC } from "react";
+"use client";
+
+import { FC, useRef, useEffect } from "react";
 import { asText, Content } from "@prismicio/client";
 import {
   PrismicImage,
@@ -9,21 +11,40 @@ import {
 import { Bounded } from "@/components/layout/Bounded";
 import Button from "@/components/common/Button";
 
+import useHeroAnimations from "./animations/useHeroAnimaitons";
+
 export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
 const Hero: FC<HeroProps> = ({ slice }) => {
+  const container = useRef<HTMLDivElement | null>(null);
+  const heroTl = useHeroAnimations(container);
+
+  const heading = asText(slice.primary.heading);
+  const words = heading.split(" ");
+
+  useEffect(() => {
+    heroTl.current?.play();
+  }, [heroTl]);
+
   return (
     <Bounded
+      ref={container}
       className="hero"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
+      {/* <div className="bg-sunset absolute top-0 -z-50 aspect-square w-[200%] -translate-y-[75%] rounded-full"></div> */}
+
       <div className="grid">
         <div className="grid h-screen place-items-center">
           <div className="grid auto-rows-min place-items-center text-center">
-            <h1 className="hero-heading text-7xl leading-[.8] font-bold text-orange-500 uppercase md:text-[9rem] lg:text-[13rem]">
-              {asText(slice.primary.heading)}
+            <h1 className="hero-heading text-sunset overflow-hidden text-7xl leading-[.8] font-black uppercase md:text-[9rem] lg:text-[13rem]">
+              <>
+                {words[0]} <br />
+                {words[1]}
+              </>
             </h1>
+
             <div className="hero-subheading mt-12 text-5xl font-semibold text-sky-950 lg:text-6xl">
               <PrismicRichText field={slice.primary.subheading} />
             </div>

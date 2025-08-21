@@ -4,6 +4,11 @@
 :root {
   --font-alpino: "Alpino", sans-serif;
 }
+@theme {
+  --color-crayola: #2176ff;
+  --color-sunset: #fbcf9d;
+  --color-chestnut: #a44a3f;
+}
 
 @layer base {
   body {
@@ -12,15 +17,6 @@
 }
 
 @layer utilities {
-  @keyframes slide-left {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-
   @keyframes spin-slow {
     0% {
       transform: rotate(0deg);
@@ -30,19 +26,14 @@
     }
   }
 
-  /* Animations */
-  .animate-slide-left {
-    animation: slide-left 3s linear infinite;
-  }
-
   .animate-spin-slow {
     animation: spin 6s linear infinite;
   }
 
   .debug {
-    @apply border-1 border-white;
+    @apply border-2 border-white;
     > * {
-      @apply border-1 border-red-500;
+      @apply border-2 border-red-500;
     }
   }
 }

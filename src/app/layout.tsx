@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased ${fonts.alpino.variable} overflow-x-hidden bg-yellow-300`}
+        className={`antialiased ${fonts.alpino.variable} bg-crayola overflow-x-hidden`}
       >
         <Header />
         <main>{children}</main>
