@@ -1,19 +1,22 @@
 import { useGSAP } from "@/plugins";
 import { RefObject, useRef } from "react";
-import { createHeroTimeline } from "./Hero.animation";
+import { createHeroInitTl, createHeroScrollTl } from "./Hero.animation";
 
 const useHeroAnimations = (container: RefObject<HTMLDivElement | null>) => {
-  const tlRef = useRef<GSAPTimeline | null>(null);
+  const initTl = useRef<GSAPTimeline | null>(null);
+  const scrollTl = useRef<GSAPTimeline | null>(null);
+
   useGSAP(
     () => {
-      tlRef.current = createHeroTimeline();
+      initTl.current = createHeroInitTl();
+      scrollTl.current = createHeroScrollTl();
     },
     {
       scope: container,
       dependencies: [],
     },
   );
-  return tlRef;
+  return { initTl, scrollTl };
 };
 
 export default useHeroAnimations;

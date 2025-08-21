@@ -17,25 +17,24 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
 const Hero: FC<HeroProps> = ({ slice }) => {
   const container = useRef<HTMLDivElement | null>(null);
-  const heroTl = useHeroAnimations(container);
+  const { initTl, scrollTl } = useHeroAnimations(container);
 
   const heading = asText(slice.primary.heading);
   const words = heading.split(" ");
 
   useEffect(() => {
-    heroTl.current?.play();
-  }, [heroTl]);
+    initTl.current?.play();
+  }, [initTl, scrollTl]);
 
   return (
     <Bounded
       ref={container}
-      className="hero"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
       {/* <div className="bg-sunset absolute top-0 -z-50 aspect-square w-[200%] -translate-y-[75%] rounded-full"></div> */}
 
-      <div className="grid">
+      <div className="hero grid">
         <div className="grid h-screen place-items-center">
           <div className="grid auto-rows-min place-items-center text-center">
             <h1 className="hero-heading text-sunset overflow-hidden text-[20vw] leading-[.8] font-black uppercase md:text-[9rem] lg:text-[13rem]">
@@ -64,11 +63,13 @@ const Hero: FC<HeroProps> = ({ slice }) => {
             className="w-full md:hidden"
             field={slice.primary.cans}
           />
-          <h2 className="text-side-heading lg:text8xl text-2xl font-black text-balance text-sky-950 uppercase">
-            {asText(slice.primary.second_heading)}
-          </h2>
-          <div className="text-side-body mt-4 max-w-xl text-lg font-normal text-sky-950">
-            <PrismicRichText field={slice.primary.second_body} />
+          <div>
+            <h2 className="text-side-heading text-2xl font-black text-balance text-sky-950 uppercase lg:text-2xl">
+              {asText(slice.primary.second_heading)}
+            </h2>
+            <div className="text-side-body mt-4 max-w-xl text-lg font-normal text-sky-950">
+              <PrismicRichText field={slice.primary.second_body} />
+            </div>
           </div>
         </div>
       </div>
