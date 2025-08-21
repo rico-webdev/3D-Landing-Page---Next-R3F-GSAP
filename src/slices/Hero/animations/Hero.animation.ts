@@ -61,12 +61,12 @@ export const createHeroScrollTl = () => {
       start: "top top",
       end: `+=${Number(gsap.getProperty(window, "innerHeight"))}px`,
       scrub: 1.5,
-      markers: true,
+      // markers: true,
     },
   });
 
   tl.to(document.body, {
-    backgroundColor: "#A2CA68",
+    backgroundColor: "#D9F99D",
     ease: "none",
   });
 
@@ -89,7 +89,7 @@ export const createHeroScrollTl = () => {
       stagger: 0.2,
       ease: "power2.out",
     }),
-    markers: true,
+    // markers: true,
   });
 
   ScrollTrigger.create({
@@ -103,7 +103,7 @@ export const createHeroScrollTl = () => {
       stagger: 0.2,
       ease: "power2.out",
     }),
-    markers: true,
+    // markers: true,
   });
 
   return tl;

@@ -5,6 +5,7 @@ import "./global.css";
 import fonts from "@/fonts";
 
 import Header from "@/components/layout/Header";
+import ViewCanvas from "@/components/ViewCanvas";
 
 export default function RootLayout({
   children,
@@ -17,7 +18,11 @@ export default function RootLayout({
         className={`antialiased ${fonts.alpino.variable} bg-crayola overflow-x-hidden`}
       >
         <Header />
-        <main>{children}</main>
+        <main>
+          {children}
+
+          <ViewCanvas />
+        </main>
       </body>
       <PrismicPreview repositoryName={repositoryName} />
     </html>
