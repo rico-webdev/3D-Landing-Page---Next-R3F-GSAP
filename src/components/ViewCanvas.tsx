@@ -2,11 +2,16 @@
 
 import { Canvas } from "@react-three/fiber";
 import { Environment } from "@react-three/drei/core/Environment";
+import FloatingCan from "@/components/ui/FloatingCan";
+import type { Group } from "three";
+
+import React, { useRef } from "react";
 
 type Props = {};
 
 const ViewCanvas = (props: Props) => {
-
+  const can1 = useRef<Group>(null);
+  const can2 = useRef<Group>(null);
   return (
     <Canvas
       style={{
@@ -23,6 +28,18 @@ const ViewCanvas = (props: Props) => {
       dpr={[1, 1.5]}
       gl={{ antialias: true }}
     >
+      <FloatingCan
+        groupRef={can1}
+        position={[1, 0, 0]}
+        scale={[1, 1, 1]}
+        rotation={[0, 0, 0]}
+      />
+      <FloatingCan
+        groupRef={can2}
+        position={[-1, 0, 0]}
+        scale={[1, 1, 1]}
+        rotation={[0, 0, 0]}
+      />
       <Environment files={["/hdrs/lobby.hdr"]} />
     </Canvas>
   );
