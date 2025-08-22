@@ -5,7 +5,7 @@ import "./global.css";
 import fonts from "@/fonts";
 
 import Header from "@/components/layout/Header";
-import ViewCanvas from "@/components/ViewCanvas";
+import ViewCanvas from "@/components/ui/canvas/ViewCanvas";
 
 export default function RootLayout({
   children,
@@ -20,7 +20,6 @@ export default function RootLayout({
         <Header />
         <main>
           {children}
-
           <ViewCanvas />
         </main>
       </body>
