@@ -3,7 +3,7 @@ import { Float } from "@react-three/drei";
 import type { Group } from "three";
 
 type Props = {
-  groupRef?: React.RefObject<Group>;
+  groupRef?: React.RefObject<Group | null>;
   flavor?: SodaCanProps["flavor"];
   position?: [number, number, number];
   scale?: [number, number, number];

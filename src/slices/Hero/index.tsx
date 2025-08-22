@@ -1,5 +1,6 @@
 "use client";
 
+import { View } from "@react-three/drei";
 import { FC, useRef, useEffect } from "react";
 import { asText, Content } from "@prismicio/client";
 import {
@@ -10,6 +11,7 @@ import {
 
 import { Bounded } from "@/components/layout/Bounded";
 import Button from "@/components/common/Button";
+import Scene from "@/slices/Hero/Scene";
 
 import useHeroAnimations from "./animations/useHeroAnimaitons";
 
@@ -33,6 +35,10 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
     >
       {/* <div className="bg-sunset absolute top-0 -z-50 aspect-square w-[200%] -translate-y-[75%] rounded-full"></div> */}
+
+      <View className="fixed top-0 left-0 h-full w-full">
+        <Scene />
+      </View>
 
       <div className="hero grid">
         <div className="grid h-screen place-items-center">
