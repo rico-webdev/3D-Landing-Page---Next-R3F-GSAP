@@ -3,6 +3,8 @@
 import { Canvas } from "@react-three/fiber";
 import { View } from "@react-three/drei";
 
+import { OrbitControls } from "@react-three/drei";
+
 const ViewCanvas = () => {
   return (
     <Canvas
@@ -11,7 +13,7 @@ const ViewCanvas = () => {
         top: 0,
         left: "50%",
         transform: "translateX(-50%)",
-        pointerEvents: "none",
+        // pointerEvents: "none",
         zIndex: 30,
         // overflow: "hidden",
       }}
@@ -21,6 +23,7 @@ const ViewCanvas = () => {
       gl={{ antialias: true }}
     >
       <View.Port />
+      <OrbitControls />
     </Canvas>
   );
 };

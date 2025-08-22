@@ -1,6 +1,6 @@
 import { useGSAP } from "@/plugins";
 import { RefObject, useRef } from "react";
-import { createHeroInitTl, createHeroScrollTl } from "./Hero.animation";
+import { createHeroInitTl, createHeroScrollTl } from "./Hero.animations";
 
 const useHeroAnimations = (container: RefObject<HTMLDivElement | null>) => {
   const initTl = useRef<GSAPTimeline | null>(null);

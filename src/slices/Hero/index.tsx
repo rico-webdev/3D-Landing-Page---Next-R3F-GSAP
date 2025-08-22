@@ -11,7 +11,7 @@ import {
 
 import { Bounded } from "@/components/layout/Bounded";
 import Button from "@/components/common/Button";
-import Scene from "@/slices/Hero/Scene";
+import Scene from "@/slices/Hero/Scene/Scene";
 
 import useHeroAnimations from "./animations/useHeroAnimaitons";
 
