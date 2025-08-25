@@ -19,6 +19,7 @@ export function createHeroInitTl(): gsap.core.Timeline {
       opacity: 1,
       ease: "back.out(1.7)",
       stagger: { each: 0.03, from: "start" },
+      delay: 0.2,
     },
   )
     .from(
@@ -66,7 +67,7 @@ export const createHeroScrollTl = () => {
   });
 
   tl.to(document.body, {
-    backgroundColor: "#D9F99D",
+    backgroundColor: "#FFD151",
     ease: "none",
   });
 

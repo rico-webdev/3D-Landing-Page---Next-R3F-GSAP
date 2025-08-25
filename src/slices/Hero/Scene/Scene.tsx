@@ -3,11 +3,7 @@ import FloatingCan from "@/components/ui/FloatingCan";
 
 import { useRef } from "react";
 import useSceneAnimations from "./useSceneAnimations";
-
-import { useHelper } from "@react-three/drei";
-import { DirectionalLightHelper, PointLightHelper } from "three";
 import type { DirectionalLight, Group, SpotLight } from "three";
-import { directPointLight } from "three/tsl";
 
 function Scene() {
   const can1 = useRef<Group>(null);
@@ -26,9 +22,6 @@ function Scene() {
 
   useSceneAnimations({ allCans, heroCans, can1, can2, can3, can4, can5 });
 
-  useHelper(directLightRef, DirectionalLightHelper, 0.5, "hotpink");
-  useHelper(pointLightRef, PointLightHelper, 0.5, "cyan");
-
   return (
     <group ref={allCans}>
       <group ref={heroCans}>
@@ -39,6 +32,7 @@ function Scene() {
           position={[-1, 0, 0]}
           scale={[1, 1, 1]}
           rotation={[0, 0, 0]}
+          floatingRange={[-0.05, 0.05]}
         />
         <FloatingCan
           groupRef={can2}
@@ -64,7 +58,6 @@ function Scene() {
         position={[2, 0, 0]}
         scale={[1, 1, 1]}
         rotation={[0, 0, 0]}
-        rotationIntensity={3}
       />
       <FloatingCan
         groupRef={can5}

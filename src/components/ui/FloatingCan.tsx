@@ -19,7 +19,7 @@ const FloatingCan = ({
   groupRef,
   flavor = "blackCherry",
   floatIntensity = 0.5,
-  floatingRange = [-0.5, 0.5],
+  floatingRange = [-0.2, 0.2],
   rotationIntensity = 1,
   floatSpeed = 1.5,
   children,

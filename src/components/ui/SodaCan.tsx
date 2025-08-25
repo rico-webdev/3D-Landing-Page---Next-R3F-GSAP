@@ -14,7 +14,7 @@ const flavorTextures = {
 };
 
 const metalMaterial = new THREE.MeshStandardMaterial({
-  roughness: 0.3,
+  roughness: 0.4,
   metalness: 1,
   color: "#bbbbbb",
 });
@@ -48,14 +48,14 @@ export default function SodaCan({
         castShadow
         receiveShadow
         geometry={(nodes.cylinder as THREE.Mesh).geometry}
-        material={metalMaterial}
+        material={metalMaterial} // hier Wireframe
       />
       <mesh
         castShadow
         receiveShadow
         geometry={(nodes.cylinder_1 as THREE.Mesh).geometry}
       >
-        <meshStandardMaterial roughness={0.15} metalness={0.7} map={label} />
+        <meshStandardMaterial roughness={0.15} metalness={0.75} map={label} />
       </mesh>
       <mesh
         castShadow

@@ -38,9 +38,10 @@ const Hero: FC<HeroProps> = ({ slice }) => {
 
       <View className="fixed top-0 left-0 h-full w-full">
         <Scene />
+     
       </View>
 
-      <div className="hero grid">
+      <div className="hero grid w-full">
         <div className="grid h-screen place-items-center">
           <div className="grid auto-rows-min place-items-center text-center">
             <h1 className="hero-heading text-sunset overflow-hidden text-[20vw] leading-[.8] font-black uppercase md:text-[9rem] lg:text-[13rem]">
@@ -64,13 +65,13 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           </div>
         </div>
 
-        <div className="text-side relative z-[80] grid h-screen items-center gap-4 md:grid-cols-2">
+        <div className="text-side relative z-[80] grid h-screen place-items-center gap-4 md:grid-cols-2">
           <PrismicImage
             className="w-full md:hidden"
             field={slice.primary.cans}
           />
           <div>
-            <h2 className="text-side-heading text-2xl font-black text-balance text-sky-950 uppercase lg:text-2xl">
+            <h2 className="text-side-heading text-2xl font-black text-balance text-sky-950 uppercase lg:text-3xl">
               {asText(slice.primary.second_heading)}
             </h2>
             <div className="text-side-body mt-4 max-w-xl text-lg font-normal text-sky-950">
