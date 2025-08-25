@@ -10,10 +10,11 @@ import {
 } from "@prismicio/react";
 
 import { Bounded } from "@/components/layout/Bounded";
-import Button from "@/components/common/Button";
+import Button from "@/components/ui/common/Button";
 import Scene from "@/slices/Hero/Scene/Scene";
 
 import useHeroAnimations from "./animations/useHeroAnimaitons";
+import { Bubbles } from "@/components/ui/canvas/Bubbles";
 
 export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
@@ -38,7 +39,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
 
       <View className="fixed top-0 left-0 h-full w-full">
         <Scene />
-     
+        <Bubbles />
       </View>
 
       <div className="hero grid w-full">
