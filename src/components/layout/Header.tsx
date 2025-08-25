@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../common/Logo";
+import Logo from "../ui/common/Logo";
 
 // type Props = {};
 

@@ -1,5 +1,5 @@
 import { Environment } from "@react-three/drei/core/Environment";
-import FloatingCan from "@/components/ui/FloatingCan";
+import FloatingCan from "@/components/ui/canvas/FloatingCan";
 
 import { useRef } from "react";
 import useSceneAnimations from "./useSceneAnimations";

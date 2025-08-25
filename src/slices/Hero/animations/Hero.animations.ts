@@ -17,7 +17,7 @@ export function createHeroInitTl(): gsap.core.Timeline {
     {
       yPercent: 100,
       opacity: 1,
-      ease: "back.out(1.7)",
+      ease: "back.out",
       stagger: { each: 0.03, from: "start" },
       delay: 0.2,
     },
@@ -28,7 +28,7 @@ export function createHeroInitTl(): gsap.core.Timeline {
         y: 100,
         opacity: 0,
         stagger: { each: 0.03, from: "start" },
-        ease: "back.out(1.7)",
+        ease: "back.out",
       },
       "-=0.1",
     )
@@ -39,9 +39,7 @@ export function createHeroInitTl(): gsap.core.Timeline {
       },
       {
         yPercent: 0,
-
-        transformOrigin: "50% 0%",
-        ease: "back.out(1.7)",
+        ease: "back.out",
         stagger: { each: 0.03, from: "start" },
       },
       "<",
