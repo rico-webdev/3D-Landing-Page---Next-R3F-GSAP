@@ -2,11 +2,13 @@
 "use client";
 
 import { ReactNode, useRef, useState } from "react";
-import { useGSAP, gsap } from "@/plugins";
-import useHeroAnimations from "./animations/useHeroAnimaitons";
 import { View } from "@react-three/drei";
+
 import Scene from "@/slices/Hero/Scene/Scene";
 import { Bubbles } from "@/components/ui/canvas/Bubbles";
+import { useGSAP } from "@/plugins";
+import useHeroAnimations from "./animations/useHeroAnimaitons";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 interface HeroAnimationWrapperProps {
   children: ReactNode;
@@ -19,26 +21,33 @@ export default function HeroAnimationWrapper({
   const [isReady, setIsReady] = useState(false);
   const { initTl } = useHeroAnimations(container);
 
-  useGSAP(
-    (context) => {
-      if (!isReady) return;
+  const isDesktop = useMediaQuery();
 
-      gsap.matchMedia(context).add("(min-width: 768px)", () => {
-        initTl.current?.play();
-      });
+  useGSAP(
+    () => {
+      if (!isDesktop) {
+        setIsReady(true);
+      }
+
+      if (!isReady) return;
+      initTl.current?.play();
     },
-    { dependencies: [isReady] },
+    { dependencies: [isReady, isDesktop] },
   );
 
   return (
     <div ref={container} className="contents">
-      <View
-        className="pointer-events-none fixed top-0 left-0 hidden h-full w-full md:block"
-        aria-hidden="true"
-      >
-        <Scene setIsReady={setIsReady} />
-        <Bubbles />
-      </View>
+      {isDesktop && (
+        <View
+          key="desktop-3d"
+          className="pointer-events-none fixed top-0 left-0 h-full w-full md:block"
+          aria-hidden="true"
+        >
+          <Scene setIsReady={setIsReady} />
+          <Bubbles />
+        </View>
+      )}
+
       {children}
     </div>
   );
