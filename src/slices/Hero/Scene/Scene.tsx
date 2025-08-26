@@ -1,3 +1,5 @@
+"use client";
+
 import { Environment } from "@react-three/drei/core/Environment";
 import FloatingCan from "@/components/ui/canvas/FloatingCan";
 
