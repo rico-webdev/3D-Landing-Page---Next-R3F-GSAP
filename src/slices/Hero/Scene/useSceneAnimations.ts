@@ -1,5 +1,5 @@
 import { useGSAP } from "@/plugins";
-import { RefObject } from "react";
+import { Dispatch, RefObject, SetStateAction } from "react";
 import animateScene from "./Scene.animations";
 import { Group } from "three";
 
@@ -12,6 +12,7 @@ export type SceneAnimationProps = {
   can4: RefObject<Group | null>;
   can5: RefObject<Group | null>;
   viewport: { width: number; height: number };
+  setIsReady: Dispatch<SetStateAction<boolean>>;
 };
 
 export type SceneAnimationResolvedProps = {
@@ -23,10 +24,11 @@ export type SceneAnimationResolvedProps = {
   can4: RefObject<Group>;
   can5: RefObject<Group>;
   viewport: { width: number; height: number };
+  setIsReady: Dispatch<SetStateAction<boolean>>;
 };
 
 const useSceneAnimations = (props: SceneAnimationProps) => {
-  const { allCans, heroCans, can1, can2, can3, can4, can5 } = props;
+  const { allCans, heroCans, can1, can2, can3, can4, can5, setIsReady } = props;
 
   const runAnimation = () => {
     if (
@@ -40,13 +42,13 @@ const useSceneAnimations = (props: SceneAnimationProps) => {
     )
       return;
 
+    setIsReady(true);
     const resolved = props as SceneAnimationResolvedProps;
     animateScene(resolved);
   };
 
   // initial animation
   useGSAP(runAnimation, { scope: allCans, dependencies: [] });
-
 };
 
 export default useSceneAnimations;

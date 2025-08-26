@@ -1,9 +1,8 @@
 import { SceneAnimationResolvedProps } from "./useSceneAnimations";
 import { gsap } from "@/plugins";
-import { View } from "@react-three/drei";
 
 const animateScene = ({
-  allCans,
+  // allCans,
   heroCans,
   can1,
   can2,

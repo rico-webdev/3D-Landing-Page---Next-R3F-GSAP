@@ -3,13 +3,17 @@
 import { Environment } from "@react-three/drei/core/Environment";
 import FloatingCan from "@/components/ui/canvas/FloatingCan";
 
-import { useRef } from "react";
+import { Dispatch, SetStateAction, useRef } from "react";
 import useSceneAnimations from "./useSceneAnimations";
 import type { DirectionalLight, Group, SpotLight } from "three";
 
 import { useThree } from "@react-three/fiber";
 
-function Scene() {
+function Scene({
+  setIsReady,
+}: {
+  setIsReady: Dispatch<SetStateAction<boolean>>;
+}) {
   const { viewport } = useThree();
 
   const can1 = useRef<Group>(null);
@@ -35,6 +39,7 @@ function Scene() {
     can4,
     can5,
     viewport,
+    setIsReady,
   });
 
   return (
