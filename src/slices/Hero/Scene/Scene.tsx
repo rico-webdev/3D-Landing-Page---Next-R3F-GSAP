@@ -5,7 +5,11 @@ import { useRef } from "react";
 import useSceneAnimations from "./useSceneAnimations";
 import type { DirectionalLight, Group, SpotLight } from "three";
 
+import { useThree } from "@react-three/fiber";
+
 function Scene() {
+  const { viewport } = useThree();
+
   const can1 = useRef<Group>(null);
   const can2 = useRef<Group>(null);
   const can3 = useRef<Group>(null);
@@ -20,7 +24,16 @@ function Scene() {
 
   const FLOATING_SPEED = 1.5;
 
-  useSceneAnimations({ allCans, heroCans, can1, can2, can3, can4, can5 });
+  useSceneAnimations({
+    allCans,
+    heroCans,
+    can1,
+    can2,
+    can3,
+    can4,
+    can5,
+    viewport,
+  });
 
   return (
     <group ref={allCans}>

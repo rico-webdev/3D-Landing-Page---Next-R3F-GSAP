@@ -11,6 +11,7 @@ export type SceneAnimationProps = {
   can3: RefObject<Group | null>;
   can4: RefObject<Group | null>;
   can5: RefObject<Group | null>;
+  viewport: { width: number; height: number };
 };
 
 export type SceneAnimationResolvedProps = {
@@ -21,34 +22,31 @@ export type SceneAnimationResolvedProps = {
   can3: RefObject<Group>;
   can4: RefObject<Group>;
   can5: RefObject<Group>;
+  viewport: { width: number; height: number };
 };
 
 const useSceneAnimations = (props: SceneAnimationProps) => {
   const { allCans, heroCans, can1, can2, can3, can4, can5 } = props;
-  // const sceneTl = useRef<GSAPTimeline | null>(null);
 
-  useGSAP(
-    () => {
-      if (
-        !heroCans.current ||
-        !allCans.current ||
-        !can1.current ||
-        !can2.current ||
-        !can3.current ||
-        !can4.current ||
-        !can5.current
-      ) {
-        return;
-      }
-      const resolved = props as SceneAnimationResolvedProps;
-      animateScene(resolved);
-    },
-    {
-      scope: allCans,
-      dependencies: [],
-    },
-  );
-  return {};
+  const runAnimation = () => {
+    if (
+      !heroCans.current ||
+      !allCans.current ||
+      !can1.current ||
+      !can2.current ||
+      !can3.current ||
+      !can4.current ||
+      !can5.current
+    )
+      return;
+
+    const resolved = props as SceneAnimationResolvedProps;
+    animateScene(resolved);
+  };
+
+  // initial animation
+  useGSAP(runAnimation, { scope: allCans, dependencies: [] });
+
 };
 
 export default useSceneAnimations;

@@ -14,9 +14,7 @@ const ViewCanvas = () => {
         left: "50%",
         transform: "translateX(-50%)",
         pointerEvents: "none",
-        zIndex: 30,
         overflow: "hidden",
-
       }}
       camera={{ fov: 30 }}
       shadows
