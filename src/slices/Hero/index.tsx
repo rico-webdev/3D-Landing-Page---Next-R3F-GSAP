@@ -6,7 +6,7 @@ import {
   SliceComponentProps,
 } from "@prismicio/react";
 
-import { Bounded } from "@/components/layout/Bounded";
+// import { Bounded } from "@/components/layout/Bounded";
 import Button from "@/components/ui/common/Button";
 import HeroAnimationWrapper from "./HeroAnimationWrapper";
 
@@ -17,10 +17,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
   const words = heading.split(" ");
 
   return (
-    <Bounded
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
+    <div>
       {/* <div className="bg-sunset absolute top-0 -z-50 aspect-square w-[200%] -translate-y-[75%] rounded-full"></div> */}
 
       <HeroAnimationWrapper>
@@ -64,7 +61,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           </div>
         </div>
       </HeroAnimationWrapper>
-    </Bounded>
+    </div>
   );
 };
 
